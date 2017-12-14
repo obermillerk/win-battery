@@ -57,3 +57,4 @@ typings/
 # dotenv environment variables file
 .env
 
+!windows.system.power-0.1.0.tgz

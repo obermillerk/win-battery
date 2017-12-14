@@ -1,0 +1,42 @@
+{
+  "name": "win-battery",
+  "version": "0.1.0",
+  "description": "Monitor battery charge and status in Windows 10.",
+  "main": "index.js",
+  "bundleDependencies": [
+    "windows.system.power"
+  ],
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">=7.6"
+  },
+  "os": [
+    "win32"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/obermillerk/win-battery.git"
+  },
+  "keywords": [
+    "windows",
+    "10",
+    "battery",
+    "win",
+    "power",
+    "charge",
+    "charging",
+    "percent"
+  ],
+  "author": "obermillerk",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/obermillerk/win-battery/issues"
+  },
+  "homepage": "https://github.com/obermillerk/win-battery#readme",
+  "dependencies": {
+    "windows.system.power": "file:windows.system.power-0.1.0.tgz"
+  }
+}
