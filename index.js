@@ -144,6 +144,24 @@ battery.status = status = function() {
     };
 };
 
+battery.fireEvents = function(force) {
+    _emitEvent('levelchange');
+    _emitEvent('chargingchange');
+    _emitEvent('energysaverchange');
+    _emitEvent('dischargetimechange');
+    if (battery.full) {
+        _emitEvent('fullcharge');
+    }
+    if ((force || !lowEmitted)
+        && !battery.charging && battery.level <= battery.low) {
+        _emitEvent('lowcharge');
+    }
+    if ((force || !criticalEmitted)
+        && !battery.charging && battery.level <= battery.critical) {
+        _emitEvent('criticalcharge');
+    }
+}
+
 function _parseEnumValue(val, enumeration) {
     let keys = Object.keys(enumeration);
 

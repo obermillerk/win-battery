@@ -1,6 +1,6 @@
 {
   "name": "win-battery",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Monitor battery charge and status in Windows 10.",
   "main": "index.js",
   "bundleDependencies": [

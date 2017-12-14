@@ -97,9 +97,18 @@ Attempting to set this to anything other than a number between 0 and 100 (inclus
 ### API
 
 #### `battery.status()`
-Check the battery status. Allows a battery state to be recorded separately from the battery object itself.
 * Returns a [`status` object](#status-object).
 
+Check the battery status. Allows a battery state to be recorded separately from the battery object itself.
+
+#### `battery.fireEvents([force])`
+***Since 0.1.1***
+* Parameters:
+  * `force` (*optional*) - whether to force emission of [`lowcharge`](#lowcharge) and [`criticalcharge`](#criticalcharge) events even if they have been previously emitted. Still requires that the charge level qualifications be met.
+* Returns `undefined` (no return).
+
+Forces the firing of all battery change events ([`levelchange`](#levelchange), [`chargingchange`](#chargingchange), [`energysaverchange`](#energysaverchange), [`dischargetimechange`](#dischargetimechange)), as well as any applicable charge events ([`fullcharge`](#fullcharge), [`lowcharge`](#lowcharge), [`criticalcharge`](#criticalcharge)).  
+If the `force` parameter is provided and `true`, [`lowcharge`](#lowcharge) and [`criticalcharge`](#criticalcharge) events will fire event if they would normally not be due to being fired previously. See those events for more details on when this would occur.
 
 ### Events
 #### `levelchange`
