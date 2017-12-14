@@ -155,10 +155,12 @@ battery.fireEvents = function(force) {
     if ((force || !lowEmitted)
         && !battery.charging && battery.level <= battery.low) {
         _emitEvent('lowcharge');
+        lowEmitted = true;
     }
     if ((force || !criticalEmitted)
         && !battery.charging && battery.level <= battery.critical) {
         _emitEvent('criticalcharge');
+        criticalEmitted = true;
     }
 }
 

@@ -110,9 +110,11 @@ Check the battery status. Allows a battery state to be recorded separately from 
 * Returns `undefined` (no return).
 
 Forces the firing of all battery change events ([`levelchange`](#levelchange), [`chargingchange`](#chargingchange), [`energysaverchange`](#energysaverchange), [`dischargetimechange`](#dischargetimechange)), as well as any applicable charge events ([`fullcharge`](#fullcharge), [`lowcharge`](#lowcharge), [`criticalcharge`](#criticalcharge)).  
-If the `force` parameter is provided and `true`, [`lowcharge`](#lowcharge) and [`criticalcharge`](#criticalcharge) events will fire event if they would normally not be due to being fired previously. See those events for more details on when this would occur.
+If the `force` parameter is provided and `true`, [`lowcharge`](#lowcharge) and [`criticalcharge`](#criticalcharge) events will fire even if they would normally not be due to being fired previously. See those events for more details on when this would occur.
 
 ### Events
+Events can be forced to fire without waiting for a change using [`battery.fireEvents()`](#batteryfireeventsforce).
+
 #### `levelchange`
 Emitted when the battery level has changed. This event is still emitted when charging.
 
