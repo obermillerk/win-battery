@@ -77,19 +77,15 @@ manager.on('batteryStatusChanged', () => {
 
     if (!battery.charging) {
         if (battery.level <= low) {
-            if (!lowEmitted) {
-                _emitEvent('lowcharge');
-                lowEmitted = true;
-            }
+            _emitEvent('lowcharge');
+            lowEmitted = true;
         } else {
             lowEmitted = false;
         }
     
         if (battery.level <= critical) {
-            if (!criticalEmitted) {
-                _emitEvent('criticalcharge');
-                critcalEmitted = true;
-            }
+            _emitEvent('criticalcharge');
+            critcalEmitted = true;
         } else {
             criticalEmitted = false;
         }
