@@ -27,9 +27,11 @@ const battery = reqiure('win-battery');
 
 battery.status();
 //  {
-//    level: 73
-//    charging: true
-//    energySaver: 'disabled'
+//    level: 73,
+//    charging: true,
+//    full: false,
+//    energySaver: 'disabled',
+//    dischargeTime: 500000000
 //  }
 
 battery.on('levelchange', (status) => {
@@ -59,7 +61,7 @@ A string, `'on'` if energy saver is on, `'off'` if energy saver is off but ready
 #### `dischargeTime`
 A number, the estimated milliseconds remaining of battery life.
 
-***This value will be*** `Infinity` ***when charging.*** It is recommended to not use this value when charging, particularly when using this value in calculations.***
+***This value will be*** `Infinity` ***when charging.*** It is recommended to not use this value when charging, particularly when using this value in calculations.
 
 
 ### Properties
