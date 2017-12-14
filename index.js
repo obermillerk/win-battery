@@ -134,7 +134,7 @@ function _emitEvent(event) {
     battery.emit(event, status());
 }
 
-battery.status = status = function() {
+function status() {
     return {
         level: battery.level,
         charging: battery.charging,
@@ -143,6 +143,8 @@ battery.status = status = function() {
         dischargeTime: battery.dischargeTime
     };
 };
+
+battery.status = status;
 
 battery.fireEvents = function(force) {
     _emitEvent('levelchange');
